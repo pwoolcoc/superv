@@ -1,0 +1,27 @@
+# Rust OTP
+
+```rust
+// myapp.rs
+extern crate otp;
+use otp::supervisor::{Supervisor, OneForOne};
+
+// your code, type that implements Sup trait
+use myapp::MySupervisor;
+
+struct MyState {
+    myfield: uint
+}
+
+fn main() {
+    let mut supervisor = Supervisor::new()
+                                .restart_strategy(OneForOne)
+                                .worker(|state: &mut MyState| {
+                                    *state.myfield += 1;
+                                    state
+                                })
+                                .worker(|| {
+                                    MySupervisor.start()
+                                });
+    supervisor.start();
+}
+```
