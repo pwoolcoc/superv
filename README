@@ -1,9 +1,9 @@
-# Rust OTP
+# Rust Supervisor Trees
 
 ```rust
 // myapp.rs
-extern crate otp;
-use otp::supervisor::{Supervisor, OneForOne};
+extern crate superv;
+use superv::supervisor::{Supervisor, OneForOne};
 
 // your code, type that implements Sup trait
 use myapp::MySupervisor;
