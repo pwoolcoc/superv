@@ -3,3 +3,6 @@
 name = "otp"
 version = "0.0.1"
 authors = ["Paul Woolcock <paul@woolcock.us>"]
+
+[dependencies.rest_easy]
+git = "https://github.com/cmr/rest_easy"
